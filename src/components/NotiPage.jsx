@@ -26,29 +26,31 @@ export default function NotiPage() {
               <img src={notification.profilePic} alt="profile-pic" />
             </div>
             <div className="post-description">
-              <span
-                className={`user-name ${
-                  notification.isRead === false ? "active" : ""
-                }`}
-              >
-                {notification.username}
-              </span>
-              <span className="action">{notification.action}</span>
-              <span className="group-name">{notification.groupName}</span>
-              <span className="post">{notification.post}</span>
-              {notification.isRead === false ? (
-                <svg
-                  width="8"
-                  height="8"
-                  viewBox="0 0 8 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className="description-wrapper">
+                <span
+                  className={`user-name ${
+                    notification.isRead === false ? "active" : ""
+                  }`}
                 >
-                  <circle cx="4" cy="4" r="4" fill="#F65552" />
-                </svg>
-              ) : (
-                ""
-              )}
+                  {notification.username}
+                </span>
+                <span className="action">{notification.action}</span>
+                <span className="group-name">{notification.groupName}</span>
+                <span className="post">{notification.post}</span>
+                {notification.isRead === false ? (
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="4" cy="4" r="4" fill="#F65552" />
+                  </svg>
+                ) : (
+                  ""
+                )}
+              </div>
               <div className="time">
                 <span className="time-text">{notification.time}</span>
               </div>
@@ -64,6 +66,13 @@ export default function NotiPage() {
                 ""
               )}
             </div>
+            {notification.userPicture ? (
+              <div className="user-profile">
+                <img src={notification.userPicture} alt="user-picture"></img>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       ))}

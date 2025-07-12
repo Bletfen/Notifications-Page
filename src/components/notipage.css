@@ -155,6 +155,14 @@ h1 {
   cursor: pointer;
 }
 
+.mark-all-text:hover {
+  color: #0a327b;
+}
+
+.user-name:hover {
+  color: #0a327b;
+}
+
 @media only screen and (min-width: 90rem) {
   .notifications-container {
     padding: 3.3rem 3rem 0rem;

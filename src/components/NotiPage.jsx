@@ -1,15 +1,36 @@
 import "./notipage.css";
-import data from "../data.json";
+import rawData from "../data.json";
+import { useState } from "react";
 export default function NotiPage() {
+  const [data, setData] = useState(rawData);
+  let counter = 0;
+  function readAll() {
+    const updatedData = data.map((item) => ({
+      ...item,
+      isRead: true,
+    }));
+    setData(updatedData);
+  }
+
+  function countUnread() {
+    data.forEach((item) => {
+      if (item.isRead === false) {
+        counter++;
+      }
+    });
+  }
+  countUnread();
   return (
     <div className="notifications-container">
       <div className="notification-title-read-wrapper">
         <div className="notification-title">
           <h1>Notifications</h1>
-          <div className="notification-numbers">3</div>
+          <div className="notification-numbers">{counter}</div>
         </div>
         <div className="mark-all">
-          <span className="mark-all-text">Mark all as read</span>
+          <span className="mark-all-text" onClick={readAll}>
+            Mark all as read
+          </span>
         </div>
       </div>
       {data.map((notification) => (

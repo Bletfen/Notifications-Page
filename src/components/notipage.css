@@ -153,6 +153,24 @@ h1 {
   color: #0a327b;
 }
 
+.group-name:hover {
+  color: #0a327b;
+}
+
+.message-wrapper:hover {
+  border: 0.1rem solid #dde7ee;
+  background: #e5effa;
+}
+
+.post:hover {
+  color: #0a327b;
+}
+
+.notifications-wrapper {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 @media only screen and (min-width: 90rem) {
   .notifications-container {
     padding: 3.3rem 3rem 0rem;

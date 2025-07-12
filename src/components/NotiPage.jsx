@@ -13,7 +13,7 @@ export default function NotiPage() {
         </div>
       </div>
       {data.map((notification) => (
-        <div className="notifications-wrapper">
+        <div className="notifications-wrapper" key={notification.id}>
           <div className="profile-img">
             <img src={notification.profilePic} alt="profile-pic" />
           </div>

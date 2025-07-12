@@ -58,8 +58,16 @@ export default function NotiPage() {
                 {notification.username}
               </span>
               <span className="action">{notification.action}</span>
-              <span className="group-name">{notification.groupName}</span>
-              <span className="post">{notification.post}</span>
+              {notification.groupName ? (
+                <span className="group-name">{notification.groupName}</span>
+              ) : (
+                ""
+              )}
+              {notification.post ? (
+                <span className="post">{notification.post}</span>
+              ) : (
+                ""
+              )}
               {notification.isRead === false ? (
                 <svg
                   width="8"

@@ -45,15 +45,19 @@ export default function NotiPage() {
             </div>
             <div className="time">
               <span className="time-text">{notification.time}</span>
-              {notification.text ? (
-                <div className="text-wrapper">
-                  <span className="text">{notification.text}</span>
-                </div>
-              ) : (
-                ""
-              )}
             </div>
           </div>
+          {notification.text ? (
+            <div className="message-wrapper">
+              <p className="message-text">
+                Hello, thanks for setting up the Chess Club. I’ve been a member
+                for a few weeks now and I’m already having lots of fun and
+                improving my game.
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       ))}
     </div>

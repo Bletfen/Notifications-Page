@@ -79,4 +79,25 @@ h1 {
   color: #5e6778;
   font-size: 1.4rem;
   font-weight: 500;
+  margin-right: 0.6rem;
+}
+
+.group-name {
+  color: #0a327b;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-right: 0.6rem;
+}
+
+.post {
+  color: #5e6778;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-right: 0.6rem;
+}
+
+.time {
+  color: #939cad;
+  font-size: 1.4rem;
+  font-weight: 500;
 }

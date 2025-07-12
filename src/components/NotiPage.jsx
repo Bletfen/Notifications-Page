@@ -19,7 +19,11 @@ export default function NotiPage() {
       <div className="notification-title-read-wrapper">
         <div className="notification-title">
           <h1>Notifications</h1>
-          <div className="notification-numbers">{countUnread()}</div>
+          {countUnread() >= 1 ? (
+            <div className="notification-numbers">{countUnread()}</div>
+          ) : (
+            ""
+          )}
         </div>
         <div className="mark-all">
           <span className="mark-all-text" onClick={readAll}>

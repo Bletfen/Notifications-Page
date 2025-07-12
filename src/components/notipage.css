@@ -109,7 +109,7 @@ h1 {
   border-radius: 0.5rem;
   border: 0.1rem solid #dde7ee;
   background: #fff;
-  width: 26.3rem;
+  max-width: 56.6rem;
   margin-top: 1.2rem;
 }
 
@@ -125,4 +125,31 @@ h1 {
 }
 
 @media only screen and (min-width: 90rem) {
+  .notifications-container {
+    padding: 3.3rem 3rem 0rem;
+  }
+
+  .notification-title {
+    gap: 1.1rem;
+  }
+
+  .notifications-wrapper {
+    margin-bottom: 0.8rem;
+  }
+
+  .notification-title-read-wrapper {
+    margin-bottom: 3.1rem;
+  }
+
+  .user-name,
+  .action,
+  .post,
+  .time,
+  .message-text {
+    font-size: 1.6rem;
+  }
+
+  .message-wrapper {
+    padding: 1.7rem 2rem 2rem;
+  }
 }

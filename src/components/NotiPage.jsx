@@ -14,10 +14,17 @@ export default function NotiPage() {
       </div>
       {data.map((notification) => (
         <div className="notifications-wrapper" key={notification.id}>
-          <div className="profile-img">
-            <img src={notification.profilePic} alt="profile-pic" />
-          </div>
-          <div className="type-of-noti">
+          <div
+            className="not-img-text-wrapper"
+            style={
+              notification.isRead === false
+                ? { backgroundColor: "#F7FAFD", borderRadius: "0.8rem" }
+                : {}
+            }
+          >
+            <div className="profile-img">
+              <img src={notification.profilePic} alt="profile-pic" />
+            </div>
             <div className="post-description">
               <span
                 className={`user-name ${
@@ -42,22 +49,22 @@ export default function NotiPage() {
               ) : (
                 ""
               )}
-            </div>
-            <div className="time">
-              <span className="time-text">{notification.time}</span>
+              <div className="time">
+                <span className="time-text">{notification.time}</span>
+              </div>
+              {notification.text ? (
+                <div className="message-wrapper">
+                  <p className="message-text">
+                    Hello, thanks for setting up the Chess Club. I've been a
+                    member for a few weeks now and I'm already having lots of
+                    fun and improving my game.
+                  </p>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
-          {notification.text ? (
-            <div className="message-wrapper">
-              <p className="message-text">
-                Hello, thanks for setting up the Chess Club. I’ve been a member
-                for a few weeks now and I’m already having lots of fun and
-                improving my game.
-              </p>
-            </div>
-          ) : (
-            ""
-          )}
         </div>
       ))}
     </div>

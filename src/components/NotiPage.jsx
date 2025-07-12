@@ -3,7 +3,6 @@ import rawData from "../data.json";
 import { useState } from "react";
 export default function NotiPage() {
   const [data, setData] = useState(rawData);
-  let counter = 0;
   function readAll() {
     const updatedData = data.map((item) => ({
       ...item,
@@ -13,19 +12,14 @@ export default function NotiPage() {
   }
 
   function countUnread() {
-    data.forEach((item) => {
-      if (item.isRead === false) {
-        counter++;
-      }
-    });
+    return data.filter((item) => !item.isRead).length;
   }
-  countUnread();
   return (
     <div className="notifications-container">
       <div className="notification-title-read-wrapper">
         <div className="notification-title">
           <h1>Notifications</h1>
-          <div className="notification-numbers">{counter}</div>
+          <div className="notification-numbers">{countUnread()}</div>
         </div>
         <div className="mark-all">
           <span className="mark-all-text" onClick={readAll}>
@@ -34,7 +28,16 @@ export default function NotiPage() {
         </div>
       </div>
       {data.map((notification) => (
-        <div className="notifications-wrapper" key={notification.id}>
+        <div
+          className="notifications-wrapper"
+          key={notification.id}
+          onClick={() => {
+            const updatedData = data.map((item) =>
+              item.id === notification.id ? { ...item, isRead: true } : item
+            );
+            setData(updatedData);
+          }}
+        >
           <div
             className="not-img-text-wrapper"
             style={

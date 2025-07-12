@@ -135,16 +135,6 @@ h1 {
   width: 100%;
 }
 
-.post-description {
-  display: flex;
-  flex-direction: column;
-}
-
-.description-wrapper {
-  display: flex;
-  align-items: center;
-}
-
 .user-profile {
   margin-left: auto;
 }

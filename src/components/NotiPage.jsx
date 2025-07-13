@@ -3,6 +3,7 @@ import rawData from "../data.json";
 import { useState } from "react";
 export default function NotiPage() {
   const [data, setData] = useState(rawData);
+  const counter = data.filter((item) => !item.isRead).length;
   function readAll() {
     const updatedData = data.map((item) => ({
       ...item,
@@ -11,16 +12,13 @@ export default function NotiPage() {
     setData(updatedData);
   }
 
-  function countUnread() {
-    return data.filter((item) => !item.isRead).length;
-  }
   return (
     <div className="notifications-container">
       <div className="notification-title-read-wrapper">
         <div className="notification-title">
           <h1>Notifications</h1>
-          {countUnread() >= 1 ? (
-            <div className="notification-numbers">{countUnread()}</div>
+          {counter >= 1 ? (
+            <div className="notification-numbers">{counter}</div>
           ) : (
             ""
           )}
